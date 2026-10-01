@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff5d5d" />
+    <title>Focus Sprint</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="timer-card" aria-labelledby="app-title">
+        <header class="app-header">
+          <p class="eyebrow">Your bright little productivity timer</p>
+          <h1 id="app-title">Focus Sprint</h1>
+        </header>
+
+        <div class="mode-badge" id="mode-badge" aria-live="polite">Focus time</div>
+        <p class="timer" id="timer" role="timer" aria-label="25 minutes remaining">25:00</p>
+        <p class="status" id="status" aria-live="polite">Ready when you are.</p>
+
+        <div class="controls" aria-label="Timer controls">
+          <button class="button button-primary" id="start-pause" type="button">Start</button>
+          <button class="button button-secondary" id="reset-timer" type="button">Reset</button>
+        </div>
+
+        <div class="session-count">
+          <div>
+            <span class="count" id="session-count">0</span>
+            <span class="count-label">focus sessions done</span>
+          </div>
+          <button class="text-button" id="reset-count" type="button">Reset count</button>
+        </div>
+
+        <form class="settings" id="settings-form">
+          <h2>Timer settings</h2>
+          <div class="settings-grid">
+            <label>
+              <span>Focus minutes</span>
+              <input id="focus-minutes" name="focusMinutes" type="number" min="1" step="1" inputmode="numeric" required />
+            </label>
+            <label>
+              <span>Break minutes</span>
+              <input id="break-minutes" name="breakMinutes" type="number" min="1" step="1" inputmode="numeric" required />
+            </label>
+          </div>
+          <button class="button button-save" type="submit">Save durations</button>
+          <p class="form-message" id="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
